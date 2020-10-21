@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: container-sweeper
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      role: container-sweeper
+  template:
+    metadata:
+      labels:
+        role: container-sweeper
+    spec:
+      containers:
+      - name: container-sweeper
+        image: container-sweeper:latest
+        imagePullPolicy: IfNotPresent
+        volumeMounts:
+        - name: docker-socket
+          mountPath: /var/run/docker.sock
+      volumes:
+      - name: docker-socket
+        hostPath:
+          path: /var/run/docker.sock
