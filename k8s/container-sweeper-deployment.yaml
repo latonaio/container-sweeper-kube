@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: container-sweeper
+  name: container-sweeper-kube
 spec:
   replicas: 1
   selector:
     matchLabels:
-      role: container-sweeper
+      role: container-sweeper-kube
   template:
     metadata:
       labels:
-        role: container-sweeper
+        role: container-sweeper-kube
     spec:
       containers:
-      - name: container-sweeper
-        image: container-sweeper:latest
+      - name: container-sweeper-kube
+        image: container-sweeper-kube:latest
         imagePullPolicy: IfNotPresent
         volumeMounts:
         - name: docker-socket

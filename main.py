@@ -10,7 +10,7 @@ from docker.errors import NotFound
 
 from aion.logger import initialize_logger, lprint
 
-SERVICE_NAME = "container-sweeper"
+SERVICE_NAME = "container-sweeper-kube"
 CONTAINER_SIZE = 3
 INTERVAL_TIME_SECOND = 3000 if os.environ.get("INTERVAL_TIME_SECOND") is None else int(os.environ.get("INTERVAL_TIME_SECOND"))
 

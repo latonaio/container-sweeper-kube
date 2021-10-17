@@ -2,7 +2,7 @@ FROM latonaio/l4t:latest
 
 # Definition of a Device & Service
 ENV POSITION=Runtime \
-    SERVICE=container-sweeper \
+    SERVICE=container-sweeper-kube \
     AION_HOME=/var/lib/aion
 # 1day
 ENV INTERVAL_TIME_SECOND 2592000
